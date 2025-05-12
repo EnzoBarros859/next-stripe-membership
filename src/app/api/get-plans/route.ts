@@ -5,23 +5,23 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: '2025-04-30.basil',
 });
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   try {
-
     const allProducts = await stripe.products.list({
-        active: true,
-        expand: ['data.default_price'],
-      });
-      
-      // Filter for membership-related products only
-      const products = allProducts.data.filter(
-        (product) => product.metadata.type === 'membership'
-      );
+      active: true,
+      expand: ['data.default_price'],
+    });
+    
+    // Filter for membership-related products only
+    const products = allProducts.data.filter(
+      (product) => product.metadata.type === 'membership'
+    );
 
     // Transform the data to match our frontend structure
     const plans = products.map((product) => {
       const price = product.default_price as Stripe.Price;
-      
       
       // Get features from metadata
       const features = product.marketing_features 

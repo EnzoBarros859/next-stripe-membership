@@ -1,6 +1,8 @@
 import { Plan } from '../../config/types';
 import MembershipCard from '../../components/MembershipCard';
 
+export const dynamic = 'force-dynamic';
+
 async function getPlans(): Promise<Plan[]> {
   const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/get-plans`, {
     cache: 'no-store'

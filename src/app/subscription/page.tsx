@@ -1,6 +1,8 @@
 import { Customer, SubscriptionDetails } from '../../config/types';
 import SubscriptionClient from '../../components/SubscriptionClient';
 
+export const dynamic = 'force-dynamic';
+
 async function getCustomers(): Promise<Customer[]> {
   const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/get-customers`, {
     cache: 'no-store'
