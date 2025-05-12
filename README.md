@@ -2,6 +2,8 @@
 
 A modern membership/subscription management system built with Next.js 14, Stripe, and Tailwind CSS. This application provides a complete solution for handling user subscriptions, membership plans, and payment processing.
 
+![image](https://github.com/user-attachments/assets/850fdb09-01e6-4743-8778-c90054005664)
+
 ## Features
 
 - 🚀 Built with Next.js 14 (App Router)
